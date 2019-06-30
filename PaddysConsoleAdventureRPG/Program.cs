@@ -6,10 +6,12 @@ using System.Threading.Tasks;
 
 namespace PaddysConsoleAdventureRPG
 {
-    class Program
+    class Game
     {
-        static void Main(string[] args)
+        static void Main() //will try to make the code better this time
         {
+            Story.StartingStory();
+            Character.NameCharacter();
         }
     }
 }
