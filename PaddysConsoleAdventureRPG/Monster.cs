@@ -8,15 +8,21 @@ using PaddysConsoleAdventureRPG;
 
 namespace PaddysConsoleAdventureRPG
 {
-    public class Monster //to be continued
+    public class Monster : LivingCreature
     {
         public int ID { get; set; }
-        public string Name { get; set; }
-        public int MaximumHealth { get; set; }
-        public int CurrentHealth { get; set; }
-        public int MobDamage { get; set; }
-        public int MobDefense { get; set; }
         public int RewardExp { get; set; }
         public int RewardGold { get; set; }
+
+        public Monster(int id, string name, int atkPower, int defValue, int rewardExp, int rewardGold, int currentHealth, int maximumHealth) : base(name, currentHealth, maximumHealth, atkPower, defValue)
+        {
+            ID = id;
+            Name = name;
+            AtkPower = atkPower;
+            DefValue = defValue;
+            RewardExp = rewardExp;
+            RewardGold = rewardGold;
+        }
+
     }
 }

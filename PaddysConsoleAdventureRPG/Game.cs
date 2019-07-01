@@ -10,30 +10,37 @@ namespace PaddysConsoleAdventureRPG
 {
     class Game
     {
-        private static Character _character;
+       
 
         public Game() //constructor
         {
-            _character = new Character(); //new Character
+            Location location = new Location(1, "Wooden hut", "This is the place where you woke up.");
+            location.ID = 1;
+            location.Name = "Wooden hut";
+            location.Description = "This is the place where you woke up.";
 
-            _character.CurrentHealth = 15;
-            _character.MaximumHealth = 15;
-            _character.Gold = 20;
-            _character.ExperiencePoints = 0;
-            _character.Level = 1;
+            //Character _character = new Character(); //CS7036
 
-            _character.Stamina = 15;
-            _character.AtkPower = 5;
-            _character.DefValue = 5;
+            //_character.CurrentHealth = 20;
+            //_character.MaximumHealth = 20;
+            //_character.MaximumStamina = 15;
+            //_character.CurrentStamina = 15;
+            //_character.Gold = 20;
+            //_character.ExperiencePoints = 0;
+            //_character.Level = 1;
 
-            _character.MaximumCarryWeight = 20.0f;
-            _character.CurrentCarryWeight = 0f;
+            //_character.Luck = 2;
+            //_character.AtkPower = 4;
+            //_character.DefValue = 4;
+
+            //_character.MaximumCarryWeight = 20.0f;
+            //_character.CurrentCarryWeight = 0f;
         }
 
         public static void Main() //will try to make the code cleaner and better this time
         {
             Story.StartingStory();
-            Character.NameCharacter();
+            //CharacterCreation.Creation(); //CS7036
 
 
 
@@ -82,18 +89,19 @@ namespace PaddysConsoleAdventureRPG
 
         }
 
-        public static void ShowStats()
+        public static void ShowStats() //NullReference when trying to add values from Game() constructor :(
         {
             System.Threading.Thread.Sleep(1000);
             Console.Clear();
-            Console.WriteLine("\nYour Level is: " + _character.Level + ".\n"); //NullReference, HELP
+            Console.WriteLine("\nYour Level is: " + "placeholder" + ".\n"); 
             System.Threading.Thread.Sleep(2000);
             Console.WriteLine("And your stats are: ");
             System.Threading.Thread.Sleep(2000);
-            Console.WriteLine("Maximum Health: " + _character.MaximumHealth);
-            Console.WriteLine("Stamina: " + _character.Stamina);
-            Console.WriteLine("Attack Power: " + _character.AtkPower);
-            Console.WriteLine("Defense: " + _character.DefValue);
+            Console.WriteLine("Maximum Health: " + "placeholder");
+            Console.WriteLine("Maximum Stamina: " + "placeholder");
+            Console.WriteLine("Attack Power: " + "placeholder");
+            Console.WriteLine("Defense: " + "placeholder");
+            Console.WriteLine("Luck: " + "placeholder");
             System.Threading.Thread.Sleep(2000);
 
             StartOver();

@@ -8,13 +8,13 @@ using PaddysConsoleAdventureRPG;
 
 namespace PaddysConsoleAdventureRPG
 {
-    class Armor //to be continued
+    public class Armor : Item
     {
-        public int ID { get; set; }
-        public string Name { get; set; }
-        public string NamePlural { get; set; }
         public int ArmorDefense{ get; set; }
-        public int value { get; set; }
-        public float weight { get; set; }
+
+        public Armor(int id, string name, string namePlural, int value, float weight, int armorDef) : base(id, name, namePlural, value, weight)
+        {
+            ArmorDefense = armorDef;
+        }
     }
 }

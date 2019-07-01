@@ -8,14 +8,15 @@ using PaddysConsoleAdventureRPG;
 
 namespace PaddysConsoleAdventureRPG
 {
-    public class Weapon //to be continued
+    public class Weapon : Item
     {
-        public int ID { get; set; }
-        public string Name { get; set; }
-        public string NamePlural { get; set; }
-        public int MinimumDamage { get; set; }
-        public int MaximumDamage { get; set; }
-        public int value { get; set; }
-        public float weight { get; set; }
+        public int MinDamage { get; set; }
+        public int MaxDamage { get; set; }
+
+        public Weapon(int id, string name, string namePlural, int value, float weight, int minDamage, int maxDamage) : base (id, name, namePlural, value, weight)
+        {
+            MinDamage = minDamage;
+            MaxDamage = maxDamage;
+        }
     }
 }

@@ -8,13 +8,13 @@ using PaddysConsoleAdventureRPG;
 
 namespace PaddysConsoleAdventureRPG
 {
-    public class HealingPotion //to be continued
+    public class HealingPotion : Item //to be continued
     {
-        public int ID { get; set; }
-        public string Name { get; set; }
-        public string NamePlural { get; set; }
         public int HealAmount { get; set; }
-        public int value { get; set; }
-        public float weight { get; set; }
+
+        public HealingPotion(int id, string name, string namePlural, int value, float weight, int healAmount) : base(id, name, namePlural, value, weight)
+        {
+            HealAmount = healAmount;
+        }
     }
 }

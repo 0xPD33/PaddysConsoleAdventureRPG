@@ -13,7 +13,16 @@ namespace PaddysConsoleAdventureRPG
         public int ID { get; set; }
         public string Name { get; set; }
         public string NamePlural { get; set; }
-        public int value { get; set; }
-        public float weight { get; set; }
+        public int Value { get; set; }
+        public float Weight { get; set; }
+
+        public Item(int id, string name, string namePlural, int value, float weight)
+        {
+            ID = id;
+            Name = name;
+            NamePlural = namePlural;
+            Value = value;
+            Weight = weight;
+        }
     }
 }
