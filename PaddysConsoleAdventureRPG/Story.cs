@@ -5,11 +5,12 @@ using System.Text;
 using System.Threading.Tasks;
 using System.IO;
 
+using PaddysConsoleAdventureRPG;
+
 namespace PaddysConsoleAdventureRPG
 {
-    class Story
+    public class Story
     {
-
         public static void ThoughtsDialog(string message/* ,string characterName*/) //I want to add the name of the character in front of every thought dialog. dunno how to do that yet
         {
             Console.ForegroundColor = ConsoleColor.Yellow;
@@ -33,7 +34,9 @@ namespace PaddysConsoleAdventureRPG
 
         public static void StartingStory()
         {
-            Console.WriteLine("Welcome to Paddy's Console Adventure RPG\n");
+            Console.WriteLine("_______________________________________________________________________________________________________________________\n");
+            Console.WriteLine("\t\t\t\t\tWelcome to Paddy's Console Adventure RPG\n");
+            Console.WriteLine("_______________________________________________________________________________________________________________________\n");
             System.Threading.Thread.Sleep(2000);
             Console.WriteLine("This game will be pretty small and will be written for learning purposes.\n");
             System.Threading.Thread.Sleep(2000);
@@ -63,15 +66,17 @@ namespace PaddysConsoleAdventureRPG
             NPCDialog("You are in Padia, a continent full of adventure.\n");
             System.Threading.Thread.Sleep(2000);
             ThoughtsDialog("What is he talking about? I've never heard of this continent.\n");
-            System.Threading.Thread.Sleep(2000);
+            System.Threading.Thread.Sleep(2500);
             PlayerDialog("But.. I'm from Europe! How did I get here?\n");
             System.Threading.Thread.Sleep(2000);
             NPCDialog("Europe? Never heard of that. We found you stranded on a beach not far from here.\n");
-            System.Threading.Thread.Sleep(2000);
-            PlayerDialog("Why do I have no memory at all?\n");
             System.Threading.Thread.Sleep(2500);
+            PlayerDialog("Why do I have no memory at all?\n");
+            System.Threading.Thread.Sleep(2000);
             NPCDialog("I don't know either. Now, I need to ask you some questions.\n");
             System.Threading.Thread.Sleep(2500);
+            NPCDialog("Answer with the truth and nothing else. It's important for me to know this.\n");
+            System.Threading.Thread.Sleep(3000);
             PlayerDialog("Okay, go ahead.\n");
             System.Threading.Thread.Sleep(2000);
 

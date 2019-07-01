@@ -4,10 +4,25 @@ using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
 
+using PaddysConsoleAdventureRPG;
+
 namespace PaddysConsoleAdventureRPG
 {
-    class Character : Entity
+    public class Character
     {
+        public int CurrentHealth { get; set; }
+        public int MaximumHealth { get; set; } 
+        public int Gold { get; set; }
+        public int ExperiencePoints { get; set; }
+        public int Level { get; set; }
+
+        public int Stamina { get; set; }
+        public int AtkPower { get; set; }
+        public int DefValue { get; set; }
+
+        public float MaximumCarryWeight { get; set; }
+        public float CurrentCarryWeight { get; set; }
+
         public static string characterName;
         private static bool confirmed = false;
        
