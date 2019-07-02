@@ -34,6 +34,7 @@ namespace PaddysConsoleAdventureRPG
         {
             Console.ForegroundColor = ConsoleColor.Green;
             Console.Write(characterName);
+            Console.Write(": ");
             Console.Write(message);
             Console.ResetColor();
         }
@@ -73,33 +74,28 @@ namespace PaddysConsoleAdventureRPG
 
             NPCDialog("Hey friend, are you finally awake?\n", "???: ");
             System.Threading.Thread.Sleep(2500);
-            PlayerDialog("Yes. I just woke up. Where am I?\n", "You: ");
-            System.Threading.Thread.Sleep(2500);
-            Console.WriteLine("\nThe person talking to you has some kind of white coat.\n");
+            PlayerDialog("Yes. I just woke up. Where am I?\n", "You");
             System.Threading.Thread.Sleep(2000);
+            Console.WriteLine("\nThe person talking to you has some kind of white coat.\n");
+            System.Threading.Thread.Sleep(2500);
             ThoughtsDialog("Maybe he is a doctor?\n", "You");
             System.Threading.Thread.Sleep(1500);
             NPCDialog("You are in Padia, a continent full of adventure.\n", "???: ");
             System.Threading.Thread.Sleep(2000);
             ThoughtsDialog("What is he talking about? I've never heard of this continent.\n", "You");
             System.Threading.Thread.Sleep(2500);
-            PlayerDialog("But.. I'm from Europe! How did I get here?\n", "You: ");
+            PlayerDialog("But.. I'm from Europe! How did I get here?\n", "You");
             System.Threading.Thread.Sleep(2000);
             NPCDialog("Europe? Never heard of that. We found you stranded on a beach not far from here.\n", "???: ");
             System.Threading.Thread.Sleep(2500);
-            PlayerDialog("Why do I have no memory at all?\n", "You: ");
+            PlayerDialog("Why do I have no memory at all?\n", "You");
             System.Threading.Thread.Sleep(2000);
-            NPCDialog("I don't know either. Now, I need to ask you some questions.\n", "???: ");
-            System.Threading.Thread.Sleep(2500);
+            NPCDialog("Your brain is probably still exhausted. Maybe it will come back when I ask you some questions.\n", "???: ");
+            System.Threading.Thread.Sleep(3500);
             NPCDialog("Answer with the truth and nothing else. It's important for me to know this.\n", "???: ");
-            System.Threading.Thread.Sleep(3000);
-            PlayerDialog("Okay, go ahead.\n", "You: ");
-            System.Threading.Thread.Sleep(2000);
-
-            
+            System.Threading.Thread.Sleep(2500);
+            PlayerDialog("Okay, go ahead.\n", "You");
+            System.Threading.Thread.Sleep(1500);
         }
-
-       
-
     }
 }
