@@ -52,54 +52,13 @@ namespace PaddysConsoleAdventureRPG
         }
 
         private static bool confirmed = false;
-
-        public static void GameOver(Character _character) //game over screen
-        {
-            Console.Clear();
-            System.Threading.Thread.Sleep(1000);
-            Console.WriteLine("*** GAME OVER ***");
-            System.Threading.Thread.Sleep(1000);
-            Console.WriteLine("\nYou did great, Hero. But death awaits everyone.\n");
-            System.Threading.Thread.Sleep(1000);
-            Console.WriteLine("\n[Press any key to continue..]");
-            Console.ReadLine();
-            Console.Clear();
-            do
-            {
-                ConsoleKey response;
-                do
-                {
-                    Console.WriteLine("Do you want to see your stats?");
-                    Console.WriteLine("\n[y/n]\n");//yes or no
-                    response = Console.ReadKey(false).Key; //wait for key input
-                    if (response != ConsoleKey.Enter) //if response isn't enter key
-                    {
-                        Console.WriteLine(); //repeat line
-                    }
-                }
-                while (response != ConsoleKey.Y && response != ConsoleKey.N); //repeat code until Y or N is pressed
-
-                confirmed = response == ConsoleKey.Y; //confirmed if response is Y
-
-                if (response == ConsoleKey.Y)
-                {
-                    ShowStats(_character);
-                }
-                else
-                {
-                    StartOver();
-                }
-
-            }
-            while (!confirmed);
-        }
-
+       
         public void StartingStats(int plusStamina, int plusHealth, int plusLuck)
         {
             Console.ForegroundColor = ConsoleColor.DarkGreen;
             MaximumStamina += plusStamina; Console.WriteLine("You gained {0} maximum stamina.", plusStamina);
             MaximumHealth += plusHealth; Console.WriteLine("You gained {0} maximum health.", plusHealth);
-            Luck += plusLuck; Console.WriteLine("You gained {0} luck.", plusLuck);
+            Luck += plusLuck; Console.WriteLine("You gained some stamina, health and {0} luck.", plusLuck);
             Console.ResetColor();
         }
 
@@ -160,6 +119,47 @@ namespace PaddysConsoleAdventureRPG
                     System.Threading.Thread.Sleep(1500);
                     System.Environment.Exit(1);
                 }
+            }
+            while (!confirmed);
+        }
+
+        public static void GameOver(Character _character) //game over screen
+        {
+            Console.Clear();
+            System.Threading.Thread.Sleep(1000);
+            Console.WriteLine("*** GAME OVER ***");
+            System.Threading.Thread.Sleep(1000);
+            Console.WriteLine("\nYou did great, Hero. But death awaits everyone.\n");
+            System.Threading.Thread.Sleep(1000);
+            Console.WriteLine("\n[Press any key to continue..]");
+            Console.ReadLine();
+            Console.Clear();
+            do
+            {
+                ConsoleKey response;
+                do
+                {
+                    Console.WriteLine("Do you want to see your stats?");
+                    Console.WriteLine("\n[y/n]\n");//yes or no
+                    response = Console.ReadKey(false).Key; //wait for key input
+                    if (response != ConsoleKey.Enter) //if response isn't enter key
+                    {
+                        Console.WriteLine(); //repeat line
+                    }
+                }
+                while (response != ConsoleKey.Y && response != ConsoleKey.N); //repeat code until Y or N is pressed
+
+                confirmed = response == ConsoleKey.Y; //confirmed if response is Y
+
+                if (response == ConsoleKey.Y)
+                {
+                    ShowStats(_character);
+                }
+                else
+                {
+                    StartOver();
+                }
+
             }
             while (!confirmed);
         }

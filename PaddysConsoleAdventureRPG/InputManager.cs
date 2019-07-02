@@ -23,6 +23,11 @@ namespace PaddysConsoleAdventureRPG
             {
                 Console.ForegroundColor = ConsoleColor.Cyan;
 
+                Console.WriteLine(question);
+                System.Threading.Thread.Sleep(1000);
+
+                Console.ForegroundColor = ConsoleColor.Blue;
+
                 Console.WriteLine(decision1);
                 Console.WriteLine(decision2);
                 Console.WriteLine(decision3);
@@ -40,8 +45,7 @@ namespace PaddysConsoleAdventureRPG
                     case "3": return 3;
                     default:
                         validChoice = false;
-                        Console.WriteLine("\nNot a valid decision\n");
-                        Console.WriteLine("[Press any key to continue..]");
+                        Console.WriteLine("\nNot a valid decision. Try again!\n");
                         Console.ReadKey();
                         break;
                 }

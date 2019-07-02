@@ -48,7 +48,7 @@ namespace PaddysConsoleAdventureRPG
             Console.WriteLine("This game will be pretty small and will be written for learning purposes.\n");
             System.Threading.Thread.Sleep(3000);
             Console.ForegroundColor = ConsoleColor.Yellow;
-            Console.WriteLine("The text written in yellow are your thoughts. They will be marked with little stars (*)");
+            Console.WriteLine("The text written in yellow are your thoughts. They will be marked with little stars (*).");
             System.Threading.Thread.Sleep(2500);
             Console.ForegroundColor = ConsoleColor.Cyan;
             Console.WriteLine("The text written in cyan is NPC speech.");

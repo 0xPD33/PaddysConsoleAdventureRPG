@@ -21,6 +21,8 @@ namespace PaddysConsoleAdventureRPG
 
         public static void Main()
         {
+            Console.SetWindowSize(180, 45);
+
             Character _character = new Character("", 20, 20, 15, 15, 4, 4, 25, 0, 1, 3, 20.0f, 0.0f);
 
             Story.StartingStory();
