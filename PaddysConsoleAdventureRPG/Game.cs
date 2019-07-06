@@ -11,19 +11,11 @@ namespace PaddysConsoleAdventureRPG
     class Game
     {
        
-        public Game() //constructor
-        {
-            Location location = new Location(1, "Wooden hut", "This is the place where you woke up.");
-            location.ID = 1;
-            location.Name = "Wooden hut";
-            location.Description = "This is the place where you woke up.";
-        }
-
         public static void Main()
         {
             Console.SetWindowSize(180, 45);
 
-            Character _character = new Character("", 20, 20, 15, 15, 4, 4, 25, 0, 1, 3, 20.0f, 0.0f);
+            Character _character = new Character("", 15, 15, 10, 10, 3, 3, 10, 0, 1, 1, 25.0f, 0.0f);
 
             Story.StartingStory();
             CharacterCreation.ChooseName(_character);

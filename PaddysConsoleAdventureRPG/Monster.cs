@@ -14,6 +14,8 @@ namespace PaddysConsoleAdventureRPG
         public int RewardExp { get; set; }
         public int RewardGold { get; set; }
 
+        public List<LootItem> LootTable { get; set; }
+
         public Monster(int id, string name, int atkPower, int defValue, int rewardExp, int rewardGold, int currentHealth, int maximumHealth) : base(name, currentHealth, maximumHealth, atkPower, defValue)
         {
             ID = id;
@@ -22,6 +24,8 @@ namespace PaddysConsoleAdventureRPG
             DefValue = defValue;
             RewardExp = rewardExp;
             RewardGold = rewardGold;
+
+            LootTable = new List<LootItem>();
         }
 
     }
