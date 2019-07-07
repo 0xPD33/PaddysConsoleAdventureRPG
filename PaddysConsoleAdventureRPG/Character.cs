@@ -10,6 +10,8 @@ namespace PaddysConsoleAdventureRPG
 {
     public class Character : LivingCreature
     {
+        public bool IsPlayer { get; set; }
+
         public int Gold { get; set; }
         public int ExperiencePoints { get; set; }
         public int Level { get; set; }
@@ -22,10 +24,12 @@ namespace PaddysConsoleAdventureRPG
         public float MaximumCarryWeight { get; set; }
         public float CurrentCarryWeight { get; set; }
 
+        //public string CurrentLocation { get; set; }
+
         public List<InventorySystem> Inventory { get; set; }
         public List<PlayerQuest> Quests { get; set; }
 
-        public Character(string name, int currentHealth, int maximumHealth, int currentStamina, int maximumStamina, int atkPower, int defValue, int gold, int experiencePoints, int level, int luck, float maximumCarryWeight, float currentCarryWeight)
+        public Character(string name, int currentHealth, int maximumHealth, int currentStamina, int maximumStamina, int atkPower, int defValue, int gold, int experiencePoints, int level, int luck, float maximumCarryWeight, float currentCarryWeight, bool isPlayer/*, Location/string(?) currentLocation*/)
             : base(name, currentHealth, maximumHealth, atkPower, defValue)
         {
             Name = name;
@@ -41,6 +45,8 @@ namespace PaddysConsoleAdventureRPG
             Luck = luck;
             MaximumCarryWeight = maximumCarryWeight;
             CurrentCarryWeight = currentCarryWeight;
+            IsPlayer = isPlayer;
+            //CurrentLocation = currentLocation;
 
             Inventory = new List<InventorySystem>();
             Quests = new List<PlayerQuest>();

@@ -105,7 +105,7 @@ namespace PaddysConsoleAdventureRPG
         public const int LOCATION_ID_CITY_CENTRE = 8;
         public const int LOCATION_ID_CITY_MERCHANT_SQUARE = 9;
         public const int LOCATION_ID_CITY_TAVERN = 10;
-        public const int LOCATION_ID_CITY_BASEMENT = 11;
+        public const int LOCATION_ID_CITY_TAVERN_BASEMENT = 11;
         public const int LOCATION_ID_CITY_TEMPLE = 12;
         public const int LOCATION_ID_GRAVEYARD = 13;
         public const int LOCATION_ID_WHEAT_FIELD = 14;
@@ -263,7 +263,7 @@ namespace PaddysConsoleAdventureRPG
             furForArmor.RewardItem = ItemByID(ITEM_ID_LEATHER_BREASTPLATE);
 
             Quest clearOutBasement = new Quest(QUEST_ID_CLEAR_OUT_BASEMENT, "Clear out Basement",
-                                               "The inhabitants of the city are uncomfortable with the rats down in the cities basement. Kill some of them and bring back 7 rat       tails.", 20, 15);
+                                               "The inhabitants of the city are uncomfortable with the rats down in the taverns basement. Kill some of them and bring back 7 rat       tails.", 20, 15);
 
             clearOutBasement.QuestCompletionItems.Add(new QuestCompletionItem(ItemByID(ITEM_ID_RAT_TAIL), 7));
 
@@ -329,8 +329,8 @@ namespace PaddysConsoleAdventureRPG
         private static void PopulateLocations()
         {
             Location woodenHut = new Location(LOCATION_ID_WOODEN_HUT, "Wooden Hut", "This is the place where you woke up.");
-            woodenHut.QuestAvailable = QuestByID(QUEST_ID_GO_TO_CITY);
-            woodenHut.QuestAvailable = QuestByID(QUEST_ID_VISIT_CAMP);
+            woodenHut.QuestAvailable1 = QuestByID(QUEST_ID_GO_TO_CITY);
+            woodenHut.QuestAvailable2 = QuestByID(QUEST_ID_VISIT_CAMP);
 
             Location forestNorth = new Location(LOCATION_ID_FOREST_NORTH, "Forest North", "The northern part of the forest.");
             forestNorth.MobToBattle1 = MonsterByID(MONSTER_ID_WOLF);
@@ -350,7 +350,35 @@ namespace PaddysConsoleAdventureRPG
 
             Location campSite = new Location(LOCATION_ID_CAMPSITE, "Campsite", "A campsite popular with adventurers and travelers.");
 
-            Location cityEntrace = new Location(LOCATION_ID_CITY_ENTRANCE, "City Entrance", "The entrance to the city.");
+            Location cityEntrance = new Location(LOCATION_ID_CITY_ENTRANCE, "City Entrance", "The entrance to the city.");
+            cityEntrance.QuestAvailable1 = QuestByID(QUEST_ID_HUNT_SPIDERS);
+
+            Location cityCentre = new Location(LOCATION_ID_CITY_CENTRE, "City Centre", "The centre of the city.");
+            cityCentre.QuestAvailable1 = QuestByID(QUEST_ID_WOLF_PROBLEM);
+            cityCentre.QuestAvailable2 = QuestByID(QUEST_ID_BEAR_PROBLEM);
+
+            Location cityMerchantSquare = new Location(LOCATION_ID_CITY_MERCHANT_SQUARE, "Merchant Square", "This is the part of the city where merchants reside.");
+            cityMerchantSquare.QuestAvailable1 = QuestByID(QUEST_ID_RAW_MEAT_FOR_THE_COOK);
+            cityMerchantSquare.QuestAvailable2 = QuestByID(QUEST_ID_FUR_FOR_ARMOR);
+
+            Location cityTavern = new Location(LOCATION_ID_CITY_TAVERN, "Tavern", "The tavern. Adventurers and Travelers gather here to relax and exchange stories.");
+            cityTavern.QuestAvailable1 = QuestByID(QUEST_ID_CLEAR_OUT_BASEMENT);
+            cityTavern.QuestAvailable2 = QuestByID(QUEST_ID_BEER_FOR_THE_ADVENTURERS);
+            cityTavern.QuestAvailable3 = QuestByID(QUEST_ID_WE_NEED_BREAD); 
+
+            Location cityTavernBasement = new Location(LOCATION_ID_CITY_TAVERN_BASEMENT, "Tavern Basement", "The taverns basement. Everything that's needed is stored here. Seems                                                                                                   to be infested with rats.");
+            cityTavernBasement.MobToBattle1 = MonsterByID(MONSTER_ID_GIANT_RAT);
+
+            Location cityTemple = new Location(LOCATION_ID_CITY_TEMPLE, "City Temple", "A holy temple only accessible by adventurers, who have proven themself worthy.");
+
+            Location graveYard = new Location(LOCATION_ID_GRAVEYARD, "Graveyard", "A place to mourn the fallen.");
+            graveYard.MobToBattle1 = MonsterByID(MONSTER_ID_SKELETON);
+
+            Location wheatField = new Location(LOCATION_ID_WHEAT_FIELD, "Wheat Field", "A field which belongs to the farmer. Wheat is planted here.");
+
+            Location farmersHouse = new Location(LOCATION_ID_FARMERS_HOUSE, "Farmers House", "The farmers house.");
+
+            Location flowerField = new Location(LOCATION_ID_FLOWER_FIELD, "Flower Field", "A flower field.");
 
             woodenHut.LocationToNorth = forestNorth;
             woodenHut.LocationToEast = forestEast;
@@ -358,9 +386,43 @@ namespace PaddysConsoleAdventureRPG
             woodenHut.LocationToWest = forestWest;
 
             forestSouth.LocationToSouth = campSite;
+            forestSouth.LocationToNorth = woodenHut;
 
-            forestNorth.LocationToNorth = cityEntrace;
+            campSite.LocationToNorth = forestSouth;
+
+            forestEast.LocationToEast = flowerField;
+            forestEast.LocationToWest = woodenHut;
+
+            flowerField.LocationToWest = forestEast;
+
+            forestNorth.LocationToNorth = cityEntrance;
             forestNorth.LocationToSouth = woodenHut;
+
+            forestWest.LocationToWest = farmersHouse;
+            forestWest.LocationToEast = woodenHut;
+
+            farmersHouse.LocationToNorth = wheatField;
+            farmersHouse.LocationToEast = forestWest;
+
+            wheatField.LocationToSouth = farmersHouse;
+
+            cityEntrance.LocationToNorth = cityCentre;
+            cityEntrance.LocationToSouth = forestNorth;
+
+            cityCentre.LocationToNorth = cityTavern;
+            cityCentre.LocationToEast = cityMerchantSquare;
+            cityCentre.LocationToSouth = cityEntrance;
+            cityCentre.LocationToWest = graveYard;
+
+            cityTavern.LocationToNorth = cityTavernBasement;
+            cityTavern.LocationToSouth = cityCentre;
+
+            graveYard.LocationToEast = cityCentre;
+
+            cityMerchantSquare.LocationToEast = cityTemple;
+            cityMerchantSquare.LocationToWest = cityCentre;
+
+            cityTemple.LocationToWest = cityMerchantSquare;
 
             Locations.Add(woodenHut);
             Locations.Add(forestNorth);
@@ -368,25 +430,17 @@ namespace PaddysConsoleAdventureRPG
             Locations.Add(forestSouth);
             Locations.Add(forestWest);
             Locations.Add(campSite);
-            Locations.Add(cityEntrace);
+            Locations.Add(cityEntrance);
+            Locations.Add(cityCentre);
+            Locations.Add(cityMerchantSquare);
+            Locations.Add(cityTavern);
+            Locations.Add(cityTavernBasement);
+            Locations.Add(cityTemple);
+            Locations.Add(graveYard);
+            Locations.Add(wheatField);
+            Locations.Add(farmersHouse);
+            Locations.Add(flowerField);
         }
-
-        //public const int LOCATION_ID_WOODEN_HUT = 1;
-        //public const int LOCATION_ID_FOREST_NORTH = 2;
-        //public const int LOCATION_ID_FOREST_EAST = 3;
-        //public const int LOCATION_ID_FOREST_SOUTH = 4;
-        //public const int LOCATION_ID_FOREST_WEST = 5;
-        //public const int LOCATION_ID_CAMPSITE = 6;
-        //public const int LOCATION_ID_CITY_ENTRANCE = 7;
-        //public const int LOCATION_ID_CITY_CENTRE = 8;
-        //public const int LOCATION_ID_CITY_MERCHANT_SQUARE = 9;
-        //public const int LOCATION_ID_CITY_TAVERN = 10;
-        //public const int LOCATION_ID_CITY_BASEMENT = 11;
-        //public const int LOCATION_ID_CITY_TEMPLE = 12;
-        //public const int LOCATION_ID_GRAVEYARD = 13;
-        //public const int LOCATION_ID_WHEAT_FIELD = 14;
-        //public const int LOCATION_ID_FARMERS_HOUSE = 15;
-        //public const int LOCATION_ID_FLOWER_FIELD = 16;
 
         public static Item ItemByID(int id)
         {
@@ -439,6 +493,18 @@ namespace PaddysConsoleAdventureRPG
 
             return null;
         }
+
+        //public static void ChangeLocation(Character _character, Location newLocation) //need to implement a way of moving locations
+        //{
+        //    _character.CurrentLocation = woodenHut; //need to move this to game start 
+
+        //    switch (InputManager.MoveInput("Where do you want to go?", "1 - North", "2 - East", "3 - South", "4 - West"))
+        //    {
+        //        case 1: _character.CurrentLocation = newLocation;
+        //    }
+
+
+        //}
 
     }
 

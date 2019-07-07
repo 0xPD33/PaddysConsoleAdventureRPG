@@ -16,6 +16,7 @@ namespace PaddysConsoleAdventureRPG
         {
             Console.Clear();
 
+
             do
             {
                 Story.NPCDialog("Please tell me your name.", "???: "); //enter name
@@ -97,9 +98,9 @@ namespace PaddysConsoleAdventureRPG
             }
 
             System.Threading.Thread.Sleep(500);
-            Story.NPCDialog("You seem to really miss your parents. I bet they did a great job raising you.", "Niclas: ");
+            Story.NPCDialog("You seem to really miss your parents. I bet they did a great job raising you.\n", "Niclas: ");
             System.Threading.Thread.Sleep(1500);
-            Story.ThoughtsDialog("I do miss them indeed..", _character.Name);
+            Story.ThoughtsDialog("I do miss them indeed..\n", _character.Name);
             System.Threading.Thread.Sleep(2000);
 
             switch (InputManager.CreationInput("Niclas: Was there a lot of war where you come from?\n",
@@ -114,9 +115,9 @@ namespace PaddysConsoleAdventureRPG
             }
 
             System.Threading.Thread.Sleep(500);
-            Story.NPCDialog("Padia is mostly peaceful, but wild monsters and bandits can be dangerous.", "Niclas: ");
+            Story.NPCDialog("\nPadia is mostly peaceful, but wild monsters and bandits can be dangerous.\n", "Niclas: ");
             System.Threading.Thread.Sleep(2000);
-            Story.ThoughtsDialog("Monsters? Bandits? Oh god.", _character.Name);
+            Story.ThoughtsDialog("Monsters? Bandits? Oh god.\n", _character.Name);
             System.Threading.Thread.Sleep(1500);
 
             switch (InputManager.CreationInput("Niclas: Did you find love?\n",
@@ -131,23 +132,23 @@ namespace PaddysConsoleAdventureRPG
             }
 
             System.Threading.Thread.Sleep(500);
-            Story.NPCDialog("I bet you will find love in Padia.", "Niclas: ");
+            Story.NPCDialog("\nI bet you will find love in Padia.\n", "Niclas: ");
             System.Threading.Thread.Sleep(2000);
-            Story.NPCDialog("Anyways. That's enough for now. I guess you miss your old world, but you will have fun here. Believe me.", "Niclas: ");
+            Story.NPCDialog("Anyways. That's enough for now. I guess you miss your old world, but you will have fun here. Believe me.\n", "Niclas: ");
             System.Threading.Thread.Sleep(2500);
-            Story.PlayerDialog("What now?",_character.Name);
+            Story.PlayerDialog("What now?\n", _character.Name);
             System.Threading.Thread.Sleep(1500);
-            Story.NPCDialog("You are free to go. North from here is the city. You should be heading there.", "Niclas: ");
+            Story.NPCDialog("You are free to go. North from here is the city. You should be heading there.\n", "Niclas: ");
             System.Threading.Thread.Sleep(2500);
-            Story.NPCDialog("Once you reach the city I will ensure you get a wooden sword for defending yourself.", "Niclas: ");
+            Story.NPCDialog("Once you reach the city I will ensure you get a wooden sword for defending yourself.\n", "Niclas: ");
             System.Threading.Thread.Sleep(2500);
-            Story.NPCDialog("But you should be careful. There could be bandits or monsters waiting for you in the forest.", "Niclas: ");
+            Story.NPCDialog("But you should be careful. There could be bandits or monsters waiting for you in the forest.\n", "Niclas: ");
             System.Threading.Thread.Sleep(2500);
-            Story.NPCDialog("There were some people camping not far from here. I think it was somewhere South.", "Niclas: ");
+            Story.NPCDialog("There were some people camping not far from here. I think it was somewhere South.\n", "Niclas: ");
             System.Threading.Thread.Sleep(2000);
             Story.NPCDialog("So if you want some advice or want to make some friends, check it out.", "Niclas: ");
             System.Threading.Thread.Sleep(2000);
-            Story.PlayerDialog("Alright. Thank you.", _character.Name);
+            Story.PlayerDialog("Alright. Thank you.\n", _character.Name);
             System.Threading.Thread.Sleep(1500);
         }
 
