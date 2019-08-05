@@ -46,6 +46,7 @@
     <Compile Include="Armor.cs" />
     <Compile Include="Character.cs" />
     <Compile Include="CharacterCreation.cs" />
+    <Compile Include="BuffConsumable.cs" />
     <Compile Include="Food.cs" />
     <Compile Include="HealingPotion.cs" />
     <Compile Include="InputManager.cs" />

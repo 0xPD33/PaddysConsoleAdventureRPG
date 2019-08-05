@@ -58,15 +58,18 @@ namespace PaddysConsoleAdventureRPG
         public const int ITEM_ID_GOLD_INGOT = 60;
         public const int ITEM_ID_HERO_MEDAL = 61;
         public const int ITEM_ID_WHEAT = 62;
-        public const int ITEM_ID_BEER = 63;
-        public const int ITEM_ID_WOODEN_STICK = 64;
-        public const int ITEM_ID_ROSE = 65;
-        public const int ITEM_ID_GOLDEN_RING = 66;
-        public const int ITEM_ID_LOVE_LETTER = 67;
-        public const int ITEM_ID_UNCURED_WEED = 68;
-        public const int ITEM_ID_JOINT = 69;
-        public const int ITEM_ID_HOLY_PENDANT = 70;
-        public const int ITEM_ID_HOLY_SCROLL = 71;
+        public const int ITEM_ID_WOODEN_STICK = 63;
+        public const int ITEM_ID_ROSE = 64;
+        public const int ITEM_ID_GOLDEN_RING = 65;
+        public const int ITEM_ID_LOVE_LETTER = 66;
+        public const int ITEM_ID_UNCURED_WEED = 67;
+        public const int ITEM_ID_HOLY_PENDANT = 68;
+        public const int ITEM_ID_HOLY_SCROLL = 69;
+
+        //buff consumables
+        public const int ITEM_ID_JOINT = 75;
+        public const int ITEM_ID_BEER = 76;
+        public const int ITEM_ID_MAGIC_BEAN = 77;
 
         //food
         public const int ITEM_ID_BREAD = 80;
@@ -167,22 +170,23 @@ namespace PaddysConsoleAdventureRPG
             Items.Add(new Item(ITEM_ID_GOLD_INGOT, "Gold Ingots", "Gold Ingots", 20, 1.0f));
             Items.Add(new Item(ITEM_ID_HERO_MEDAL, "Hero Medal", "Hero Medals", 25, 0.1f));
             Items.Add(new Item(ITEM_ID_WHEAT, "Wheat", "Wheat'", 3, 0.3f));
-            Items.Add(new Item(ITEM_ID_BEER, "Beer", "Beers", 7, 0.7f));
             Items.Add(new Item(ITEM_ID_WOODEN_STICK, "Wooden Stick", "Wooden Sticks", 2, 0.05f));
             Items.Add(new Item(ITEM_ID_ROSE, "Rose", "Roses", 5, 0.05f));
             Items.Add(new Item(ITEM_ID_GOLDEN_RING, "Golden Ring", "Golden Rings", 40, 0.1f));
             Items.Add(new Item(ITEM_ID_LOVE_LETTER, "Love Letter", "Love Letters", 10, 0.2f));
             Items.Add(new Item(ITEM_ID_UNCURED_WEED, "Uncured Weed", "Uncured Weed'", 5, 0.5f));
-            Items.Add(new Item(ITEM_ID_JOINT, "Joint", "Joints", 7, 0.25f));
             Items.Add(new Item(ITEM_ID_HOLY_PENDANT, "Holy Pendant", "Holy Pendants", 50, 0.2f));
             Items.Add(new Item(ITEM_ID_HOLY_SCROLL, "Holy Scroll", "Holy Scrolls", 45, 0.3f));
+
+            //buff consumables
+            Items.Add(new BuffConsumable(ITEM_ID_JOINT, "Joint", "Joints", 7, 0.25f, 1, 1, -1f));
+            Items.Add(new BuffConsumable(ITEM_ID_BEER, "Beer", "Beers", 8, 0.7f, 2, -1, 2f));
+            Items.Add(new BuffConsumable(ITEM_ID_MAGIC_BEAN, "Magic Bean", "Magic Beans", 15, 0.2f, 3, 3, 3f));
 
             //food
             Items.Add(new Food(ITEM_ID_BREAD, "Bread", "Bread(s)", 8, 0.3f, 3, 4));
             Items.Add(new Food(ITEM_ID_APPLE, "Apple", "Apples", 3, 0.1f, 1, 2));
             Items.Add(new Food(ITEM_ID_MEAT_SOUP, "Meat Soup", "Meat Soups", 11, 0.4f, 5, 6));
-
-            //more items are coming. My plan is to make beer and joints consumable. They will give you stat increases in battle.
         }
 
         private static void PopulateMonsters()
@@ -215,6 +219,7 @@ namespace PaddysConsoleAdventureRPG
             Monster giantRat = new Monster(MONSTER_ID_GIANT_RAT, "Giant Rat", 2, 1, 8, 4, 10, 10);
             giantRat.LootTable.Add(new LootItem(ItemByID(ITEM_ID_RAT_TAIL), 70, true));
             giantRat.LootTable.Add(new LootItem(ItemByID(ITEM_ID_RAT_FUR), 30, true));
+            giantRat.LootTable.Add(new LootItem(ItemByID(ITEM_ID_MAGIC_BEAN), 5, true));
 
             Monsters.Add(giantRat);
 
@@ -496,18 +501,16 @@ namespace PaddysConsoleAdventureRPG
 
         //public static void ChangeLocation(Character _character, Location newLocation) //need to implement a way of moving locations
         //{
-        //    _character.CurrentLocation = woodenHut; //need to move this to game start 
-
+        //    _character.CurrentLocation = woodenHut;
+        //     
         //    switch (InputManager.MoveInput("Where do you want to go?", "1 - North", "2 - East", "3 - South", "4 - West"))
         //    {
         //        case 1: _character.CurrentLocation = newLocation;
         //    }
-
-
         //}
 
     }
 
 
-   
+
 }

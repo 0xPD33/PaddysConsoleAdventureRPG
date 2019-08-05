@@ -17,6 +17,7 @@ namespace PaddysConsoleAdventureRPG
 
             Character _character = new Character("", 15, 15, 10, 10, 3, 3, 10, 0, 1, 1, 25.0f, 0.0f, true);
 
+
             Story.StartingStory();
             CharacterCreation.ChooseName(_character);
             CharacterCreation.ChooseStory(_character);

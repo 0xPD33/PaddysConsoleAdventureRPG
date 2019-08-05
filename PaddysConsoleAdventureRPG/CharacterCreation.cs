@@ -16,6 +16,7 @@ namespace PaddysConsoleAdventureRPG
         {
             Console.Clear();
 
+            System.Threading.Thread.Sleep(500);
 
             do
             {
@@ -93,7 +94,7 @@ namespace PaddysConsoleAdventureRPG
             {
                 case 1: _character.StartingStats(3, 1, 0); break;
                 case 2: _character.StartingStats(1, 3, 0); break;
-                case 3: _character.StartingStats(2, 2, 1); break;
+                case 3: _character.StartingStats(1, 1, 2); break;
                 default: break;
             }
 
@@ -125,9 +126,9 @@ namespace PaddysConsoleAdventureRPG
                        "2 - I loved no one except my parents. I didn't believe in love anyway.",
                        "3 - I was getting a lot of love. I wasn't getting rejected very often."))
             {
-                case 1: _character.StartingStats(3, 2, 1); break;
-                case 2: _character.StartingStats(2, 3, 1); break;
-                case 3: _character.StartingStats(1, 2, 3); break;
+                case 1: _character.StartingStats(3, 1, 1); break;
+                case 2: _character.StartingStats(1, 3, 1); break;
+                case 3: _character.StartingStats(2, 2, 2); break;
                 default: break;
             }
 

@@ -62,9 +62,12 @@ namespace PaddysConsoleAdventureRPG
         public void StartingStats(int plusStamina, int plusHealth, int plusLuck)
         {
             Console.ForegroundColor = ConsoleColor.DarkGreen;
-            MaximumStamina += plusStamina; Console.WriteLine("You gained {0} maximum stamina.", plusStamina);
-            MaximumHealth += plusHealth; Console.WriteLine("You gained {0} maximum health.", plusHealth);
-            Luck += plusLuck; Console.WriteLine("You gained some stamina, health and {0} luck.", plusLuck);
+            MaximumStamina += plusStamina;
+            Console.WriteLine("You gained {0} maximum stamina.", plusStamina);
+            MaximumHealth += plusHealth;
+            Console.WriteLine("You gained {0} maximum health.", plusHealth);
+            Luck += plusLuck;
+            Console.WriteLine("You gained some stamina, health and {0} luck.", plusLuck);
             Console.ResetColor();
         }
 
